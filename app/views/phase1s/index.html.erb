@@ -1,9 +1,3 @@
-<p>
-  Download:
-  <%= link_to "CSV", phase1s_path(format: "csv") %> |
-  <%= link_to "Excel", phase1s_path(format: "xlsx") %> |
-</p>
-
 <table>
   <thead>
     <tr>
@@ -47,12 +41,3 @@
     <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
     <% end %>
 </ul>
-
-<%= form_tag("", method: "POST", class: 'form-horizontal', multipart: true) do %>
-  <div class="form-group">
-    <%= file_field_tag :file, accept: 'xls,xlsx' %>
-  </div>
-  <div class="form-group">
-    <%= submit_tag("Import", class: 'btn btn-default') %>  
-  </div>
-<% end %>

@@ -10,16 +10,4 @@ class Phase1sController < ApplicationController
     @pages = Phase1.all.count.div 10 + 1
     @phase1s= Phase1.all.order(updated_at: :desc).limit(10).offset(offset)
   end
-    
-  def import
-    Phase1.import(params[:file])
-    redirect_to phase1s_path, notice: "Imported Successfully."
-  end
-  
-  def create
-  end
-  
-  def show
-  end
-    
 end

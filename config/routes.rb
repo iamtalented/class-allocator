@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :phase1s do
     collection { post :import }
   end
-  get '/phase1s/next' => 'phase1#next'
+  get '/phase1s/index' => 'phase1#index'
   
 end
