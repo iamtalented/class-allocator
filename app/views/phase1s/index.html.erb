@@ -1,0 +1,58 @@
+<p>
+  Download:
+  <%= link_to "CSV", phase1s_path(format: "csv") %> |
+  <%= link_to "Excel", phase1s_path(format: "xlsx") %> |
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>NRIC</th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Choice 1</th>
+      <th>Choice 2</th>
+      <th>Choice 3</th>
+      <th>Choice 4</th>
+      <th>Choice 5</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phase1s.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.nric %></td>
+        <td><%= p.school %></td>
+        <td><%= p.class_name %></td>
+        <td><%= p.email %></td>
+        <td><%= p.phone %></td>
+        <td><%= p.choice_1 %></td>
+        <td><%= p.choice_2 %></td>
+        <td><%= p.choice_3 %></td>
+        <td><%= p.choice_4 %></td>
+        <td><%= p.choice_5 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<ul class="pager">
+    <% for page in 1..@pages+1%>
+    <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
+    <% end %>
+</ul>
+
+<%= form_tag("", method: "POST", class: 'form-horizontal', multipart: true) do %>
+  <div class="form-group">
+    <%= file_field_tag :file, accept: 'xls,xlsx' %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag("Import", class: 'btn btn-default') %>  
+  </div>
+<% end %>
