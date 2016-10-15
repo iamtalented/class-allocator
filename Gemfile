@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Use simple-spreadsheet gem to process excel sheets
+gem 'simple-spreadsheet'
+# Use devise gem for user authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

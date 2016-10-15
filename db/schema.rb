@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930072714) do
+ActiveRecord::Schema.define(version: 20161009074509) do
+
+  create_table "phase1s", force: :cascade do |t|
+    t.text     "name"
+    t.text     "nric"
+    t.text     "school"
+    t.text     "class_name"
+    t.text     "email"
+    t.text     "phone"
+    t.text     "choice_1"
+    t.text     "choice_2"
+    t.text     "choice_3"
+    t.text     "choice_4"
+    t.text     "choice_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
