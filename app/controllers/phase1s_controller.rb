@@ -15,6 +15,7 @@ class Phase1sController < ApplicationController
   end
   
   def show
+    @phase1s = Phase1.all
   end
 
   def import

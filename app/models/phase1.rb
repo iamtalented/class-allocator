@@ -1,4 +1,5 @@
 class Phase1 < ActiveRecord::Base
+    has_one :phase1_result
     require "simple-spreadsheet"
     
     def self.import(file)
@@ -8,8 +9,8 @@ class Phase1 < ActiveRecord::Base
         mobile_number = spreadsheet.cell(6,3)
         email = spreadsheet.cell(7,3)
         workshop = []
-        (7..spreadsheet.last_column).each do |i|
-            workshop.push(spreadsheet.cell(11,i))
+        (7..spreadsheet.last_column).each do |j|
+            workshop.push(spreadsheet.cell(11,j))
         end
 
         (12..spreadsheet.last_row).each do |i|
@@ -36,4 +37,15 @@ class Phase1 < ActiveRecord::Base
 
         end
     end
+    
+    def self.to_csv(options = {})
+        attributes = %w{name nric school class_name email phone choice_1 choice_2 choice_3}
+        CSV.generate(options) do |csv|
+            csv << {name: 'Name', nric: 'NRIC', school: 'School', class_name: 'Class', email: 'Email', phone: 'Phone', choice_1: 'Taster 1', choice_2: 'Taster 2', choice_3: 'Taster 3'}.values
+                all.each do |phase1|
+            csv << {name: 'Name', nric: 'NRIC', school: 'School', class_name: 'Class', email: 'Email', phone: 'Phone', choice_1: 'Taster 1', choice_2: 'Taster 2', choice_3: 'Taster 3'}.keys.map{ |attr| phase1.send(attr) }
+        end
+      end
+    end
+    
 end
