@@ -1,3 +1,8 @@
+<p>
+  Download:
+  <%= link_to "Excel", phase1_results_path(format: "xls") %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -7,16 +12,14 @@
       <th>Class</th>
       <th>Email</th>
       <th>Phone</th>
-      <th>Choice 1</th>
-      <th>Choice 2</th>
-      <th>Choice 3</th>
-      <th>Choice 4</th>
-      <th>Choice 5</th>
+      <th>Taster 1</th>
+      <th>Taster 2</th>
+      <th>Taster 3</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @phase1s.each do |p| %>
+    <% @phase1_result.each do |p| %>
       <tr>
         <td><%= p.name %></td>
         <td><%= p.nric %></td>
@@ -24,11 +27,9 @@
         <td><%= p.class_name %></td>
         <td><%= p.email %></td>
         <td><%= p.phone %></td>
-        <td><%= p.choice_1 %></td>
-        <td><%= p.choice_2 %></td>
-        <td><%= p.choice_3 %></td>
-        <td><%= p.choice_4 %></td>
-        <td><%= p.choice_5 %></td>
+        <td><%= p.taster_1 %></td>
+        <td><%= p.taster_2 %></td>
+        <td><%= p.taster_3 %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,8 +39,6 @@
 
 <ul class="pager">
     <% for page in 1..@pages+1%>
-    <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
+    <li class="<%= 'active' if @current_page==page %>"><a href="/phase1_results?page=<%=page%>"><%=page%></a></li>
     <% end %>
 </ul>
-
-<%= link_to "generate results", phase1_results_path %>
