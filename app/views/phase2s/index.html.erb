@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>NRIC</th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Choice 1</th>
+      <th>Choice 2</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phase2s.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.nric %></td>
+        <td><%= p.school %></td>
+        <td><%= p.class_name %></td>
+        <td><%= p.email %></td>
+        <td><%= p.phone %></td>
+        <td><%= p.choice_1 %></td>
+        <td><%= p.choice_2 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
