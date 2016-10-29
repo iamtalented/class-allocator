@@ -1,0 +1,40 @@
+<p>
+  Download:
+  <%= link_to "Excel", phase2_results_path(format: "xls") %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>NRIC</th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Final Selection</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phase2_result.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.nric %></td>
+        <td><%= p.school %></td>
+        <td><%= p.class_name %></td>
+        <td><%= p.email %></td>
+        <td><%= p.phone %></td>
+        <td><%= p.final_selection %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<ul class="pager">
+    <% for page in 1..@pages+1%>
+    <li class="<%= 'active' if @current_page==page %>"><a href="/phase2_results?page=<%=page%>"><%=page%></a></li>
+    <% end %>
+</ul>

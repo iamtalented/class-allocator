@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   end
   
   resources :phase1_results
+  
+  resources :phase2s do
+    collection { post :import }
+  end
+ 
+  resources :phase2_results
  
   root to: "phase1s#new"
   

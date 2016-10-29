@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015083739) do
+ActiveRecord::Schema.define(version: 20161029070222) do
 
   create_table "phase1_results", force: :cascade do |t|
     t.text     "name"
@@ -39,6 +39,31 @@ ActiveRecord::Schema.define(version: 20161015083739) do
     t.text     "choice_3"
     t.text     "choice_4"
     t.text     "choice_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "phase2_results", force: :cascade do |t|
+    t.text     "name"
+    t.text     "nric"
+    t.text     "school"
+    t.text     "class_name"
+    t.text     "email"
+    t.text     "phone"
+    t.text     "final_selection"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "phase2s", force: :cascade do |t|
+    t.text     "name"
+    t.text     "nric"
+    t.text     "school"
+    t.text     "class_name"
+    t.text     "email"
+    t.text     "phone"
+    t.text     "choice_1"
+    t.text     "choice_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
