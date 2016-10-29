@@ -1,4 +1,6 @@
-<table>
+
+<div class style= "margin:10px">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -33,13 +35,16 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<ul class="pager">
+<div class="row text-right" style="margin:10px">
+<ul class="pagination">
     <% for page in 1..@pages+1%>
     <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
     <% end %>
 </ul>
+</div>
 
 <%= link_to "generate results", phase1_results_path %>
