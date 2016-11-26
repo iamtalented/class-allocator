@@ -1,20 +1,20 @@
 <div class style= "margin:15px">
   <div>
     <h4>
-      Phase 1:
-      <small class="text-muted">Allocate 3 Workshops to each Participant</small>
+      Phase 2:
+      <small class="text-muted">Allocate Final Selection to each Participant</small>
     </h4>
     
     <button type="button" class="btn btn-default">
-      <%= link_to "Back", phase1s_path %>
+      <%= link_to "Back", phase2s_path %>
     </button>
     
     <button type="button" class="btn btn-default">
-      <%= link_to "Download Excel", phase1_results_path(format: "xls") %>
+      <%= link_to "Download Excel", phase2_results_path(format: "xls") %>
     </button>
     
     <button type="button" class="btn btn-default">
-      <%= link_to "Phase 2", phase2s_path %>
+      <%= link_to "Phase 1", phase1s_path %>
     </button>
   </div>
     
@@ -29,14 +29,12 @@
         <th class="text-center">Class</th>
         <th class="text-center">Email</th>
         <th class="text-center">Phone</th>
-        <th class="text-center">Taster 1</th>
-        <th class="text-center">Taster 2</th>
-        <th class="text-center">Taster 3</th>
+        <th class="text-center">Final Selection</th>
       </tr>
     </thead>
   
     <tbody>
-      <% @phase1_result.each do |p| %>
+      <% @phase2_result.each do |p| %>
         <tr>
           <td class="text-center"><%= p.name %></td>
           <td class="text-center"><%= p.nric %></td>
@@ -44,9 +42,7 @@
           <td class="text-center"><%= p.class_name %></td>
           <td class="text-center"><%= p.email %></td>
           <td class="text-center"><%= p.phone %></td>
-          <td class="text-center"><%= p.taster_1 %></td>
-          <td class="text-center"><%= p.taster_2 %></td>
-          <td class="text-center"><%= p.taster_3 %></td>
+          <td class="text-center"><%= p.final_selection %></td>
         </tr>
       <% end %>
     </tbody>
@@ -56,7 +52,7 @@
 <div class="row text-right" style="margin:10px">
   <ul class="pagination">
     <% for page in 1..@pages+1%>
-    <li class="<%= 'active' if @current_page==page %>"><a href="/phase1_results?page=<%=page%>"><%=page%></a></li>
+    <li class="<%= 'active' if @current_page==page %>"><a href="/phase2_results?page=<%=page%>"><%=page%></a></li>
     <% end %>
   </ul>
 </div>

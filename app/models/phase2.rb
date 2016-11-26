@@ -1,5 +1,5 @@
-class Phase1 < ActiveRecord::Base
-    has_one :phase1_result
+class Phase2 < ActiveRecord::Base
+    has_one :phase2_result
     require "simple-spreadsheet"
     
     def self.import(file)
@@ -29,7 +29,7 @@ class Phase1 < ActiveRecord::Base
                 end
             end
             
-            Phase1.create(:name=>name, :nric=>nric, :school=>school, :class_name=>class_name, :email=>email, :phone=>phone, :choice_1=>chosen[0], :choice_2=>chosen[1], :choice_3=>chosen[2], :choice_4=>chosen[3], :choice_5=>chosen[4])
+            Phase2.create(:name=>name, :nric=>nric, :school=>school, :class_name=>class_name, :email=>email, :phone=>phone, :choice_1=>chosen[0], :choice_2=>chosen[1])
         end
     end
 end

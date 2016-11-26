@@ -1,45 +1,71 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>NRIC</th>
-      <th>School</th>
-      <th>Class</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Choice 1</th>
-      <th>Choice 2</th>
-      <th>Choice 3</th>
-      <th>Choice 4</th>
-      <th>Choice 5</th>
-    </tr>
-  </thead>
+<div class style= "margin:15px">
+  <div>
+    <h4>
+      Phase 1:
+      <small class="text-muted">Participants Choose 5 Workshops</small>
+    </h4>
 
-  <tbody>
-    <% @phase1s.each do |p| %>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Add New", new_phase1_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Generate Results", phase1_results_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Clear All", remove_all_phase1s_path, :method => :get %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2", phase2s_path %>
+    </button>
+  </div>
+  
+  <br>
+  
+  <table class="table table-striped table-bordered">
+    <thead>
       <tr>
-        <td><%= p.name %></td>
-        <td><%= p.nric %></td>
-        <td><%= p.school %></td>
-        <td><%= p.class_name %></td>
-        <td><%= p.email %></td>
-        <td><%= p.phone %></td>
-        <td><%= p.choice_1 %></td>
-        <td><%= p.choice_2 %></td>
-        <td><%= p.choice_3 %></td>
-        <td><%= p.choice_4 %></td>
-        <td><%= p.choice_5 %></td>
+        <th class="text-center">Name</th>
+        <th class="text-center">NRIC</th>
+        <th class="text-center">School</th>
+        <th class="text-center">Class</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Phone</th>
+        <th class="text-center">Choice 1</th>
+        <th class="text-center">Choice 2</th>
+        <th class="text-center">Choice 3</th>
+        <th class="text-center">Choice 4</th>
+        <th class="text-center">Choice 5</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @phase1s.each do |p| %>
+        <tr>
+          <td class="text-center"><%= p.name %></td>
+          <td class="text-center"><%= p.nric %></td>
+          <td class="text-center"><%= p.school %></td>
+          <td class="text-center"><%= p.class_name %></td>
+          <td class="text-center"><%= p.email %></td>
+          <td class="text-center"><%= p.phone %></td>
+          <td class="text-center"><%= p.choice_1 %></td>
+          <td class="text-center"><%= p.choice_2 %></td>
+          <td class="text-center"><%= p.choice_3 %></td>
+          <td class="text-center"><%= p.choice_4 %></td>
+          <td class="text-center"><%= p.choice_5 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
 
-<ul class="pager">
-    <% for page in 1..@pages+1%>
-    <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
-    <% end %>
-</ul>
-
-<%= link_to "generate results", phase1_results_path %>
+<div class="row text-right" style="margin:10px">
+  <ul class="pagination">
+      <% for page in 1..@pages+1%>
+      <li class="<%= 'active' if @current_page==page %>"><a href="/phase1s?page=<%=page%>"><%=page%></a></li>
+      <% end %>
+  </ul>
+</div>

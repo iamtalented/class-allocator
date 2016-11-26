@@ -11,7 +11,7 @@
         <div class='row'>
           <div class='col-sm-6'>
             <h4>
-              Phase 1:
+              Phase 2:
               <small class="text-muted">Upload File</small>
             </h4>
           </div>
@@ -19,7 +19,7 @@
       </div>
     <div class='panel-body'>
       <div class="col-sm-4 col-centered" >
-          <%= form_tag import_phase1s_path, multipart: true do %>
+          <%= form_tag import_phase2s_path, multipart: true do %>
       <div class="col-sm-2 col-centered pull-right" >
         <br>
         <%= file_field_tag :file %>
@@ -33,6 +33,6 @@
   </div>
 <% end %>
   <button type="button" class="btn btn-default pull-center">
-    <%= link_to "Back", phase1s_path %>
+    <%= link_to "Back", phase2s_path %>
   </button>
 </div>

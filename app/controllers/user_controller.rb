@@ -1,7 +1,6 @@
 class UserController < ApplicationController
 
-def index
-  puts "Hello World"
-end
+    def index
+    end
 
 end
