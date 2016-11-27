@@ -1,9 +1,14 @@
-<p>
-  Download:
-  <%= link_to "Excel", phase1_results_path(format: "xls") %>
-</p>
-
-<table>
+<div class style= "margin:15px">
+  
+  <button type="button" class="btn btn-default">
+      <%= link_to "Generate Excel", phase1_results_path(format: "xls") %>
+  </button>
+  
+  <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2 Import", new_phase2_path %>
+  </button>
+  
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -37,8 +42,11 @@
 
 <br>
 
+<div class="row text-right" style="margin:10px">
 <ul class="pager">
     <% for page in 1..@pages+1%>
     <li class="<%= 'active' if @current_page==page %>"><a href="/phase1_results?page=<%=page%>"><%=page%></a></li>
     <% end %>
 </ul>
+</div>
+

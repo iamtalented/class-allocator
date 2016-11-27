@@ -1,5 +1,17 @@
+<div class style= "margin:15px">
+  <div>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Clear All", remove_all_phase1s_path, :method => :get %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Generate Results", phase1_results_path %>
+    </button>
+    
+  </div>
+  
 
-<div class style= "margin:10px">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -47,4 +59,3 @@
 </ul>
 </div>
 
-<%= link_to "generate results", phase1_results_path %>

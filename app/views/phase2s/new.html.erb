@@ -1,4 +1,9 @@
-<%= form_tag import_phase2s_path, multipart: true do %>
+<div class style= "margin:15px">
+  <%= form_tag import_phase2s_path, multipart: true do %>
+  <br>
   <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
+  <br>
+  <%= submit_tag "Import Phase 2", class: "btn btn-default"%>
+  <br>
 <% end %>
+</div>
