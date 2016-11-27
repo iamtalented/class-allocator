@@ -22,4 +22,9 @@ class Phase1sController < ApplicationController
     Phase1.import(params[:file])
     redirect_to phase1s_path, notice: "Imported!"
   end
+  
+  def remove_all
+      Phase1.delete_all
+      redirect_to phase1s_path, notice: "Phase1 Removed"
+  end
 end
