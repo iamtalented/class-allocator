@@ -18,8 +18,12 @@ Rails.application.routes.draw do
   
   resources :phase2_results
   
-  root to: "phase1s#index"
+  root to: "pages#home"
   
   devise_for :users
   get '/users/index' => 'user#index'
+  
+  controller :pages do
+    get :home
+  end
 end

@@ -5,17 +5,40 @@
       <small class="text-muted">Allocate 3 Workshops to each Participant</small>
     </h4>
     
-    <button type="button" class="btn btn-default">
-      <%= link_to "Back", phase1s_path %>
+        <button type="button" class="btn btn-default">
+      <%= link_to "Homepage", home_path %>
     </button>
+    
+    <button type="button" class="btn btn-default">
+
+      <%= link_to "Phase 1", phase1s_path %>
+    </button>
+    
+    <button type="button" class="btn btn-primary activebutton">
+      <%= link_to "Phase 1 Results", phase1_results_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2", phase2s_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2 Results", phase2_results_path %>
+    </button>
+    
+    <br></br>
+    
+    
+
     
     <button type="button" class="btn btn-default">
       <%= link_to "Download Excel", phase1_results_path(format: "xls") %>
     </button>
     
     <button type="button" class="btn btn-default">
-      <%= link_to "Phase 2", phase2s_path %>
+      <%= link_to "Back", phase1s_path %>
     </button>
+    
   </div>
     
   <br>

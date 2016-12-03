@@ -1,5 +1,6 @@
 class Phase1 < ActiveRecord::Base
     has_one :phase1_result
+    has_many :workshops
     require "simple-spreadsheet"
     
     def self.import(file)
@@ -8,7 +9,12 @@ class Phase1 < ActiveRecord::Base
         staff = spreadsheet.cell(5,3)
         mobile_number = spreadsheet.cell(6,3)
         email = spreadsheet.cell(7,3)
-
+        
+        workshop = []
+        (7..spreadsheet.last_column).each do |j|
+            workshop.push(spreadsheet.cell(11,j))
+        end
+        
         (13..spreadsheet.last_row).each do |i|
             name = spreadsheet.cell(i,2)
             nric = spreadsheet.cell(i,3)

@@ -6,6 +6,28 @@
     </h4>
 
     <button type="button" class="btn btn-default">
+      <%= link_to "Homepage", home_path %>
+    </button>
+    
+    <button type="button" class="btn btn-primary activebutton">
+      <%= link_to "Phase 1", phase1s_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 1 Results", phase1_results_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2", phase2s_path %>
+    </button>
+    
+    <button type="button" class="btn btn-default">
+      <%= link_to "Phase 2 Results", phase2_results_path %>
+    </button>
+    
+    <br></br>
+    
+    <button type="button" class="btn btn-default">
       <%= link_to "Add New", new_phase1_path %>
     </button>
     
@@ -17,9 +39,7 @@
       <%= link_to "Clear All", remove_all_phase1s_path, :method => :get %>
     </button>
     
-    <button type="button" class="btn btn-default">
-      <%= link_to "Phase 2", phase2s_path %>
-    </button>
+
   </div>
   
   <br>
