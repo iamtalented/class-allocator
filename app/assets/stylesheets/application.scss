@@ -1,4 +1,5 @@
-@import "bootstrap-sprockets";
+
+ @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .border-form-div {
@@ -8,11 +9,11 @@
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
 .border-form-div .form-signin-heading,
 .border-form-div .checkbox {
@@ -28,35 +29,58 @@
 }
 
 .featurette {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .featurette-image.pull-left {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .featurette-image.pull-right {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .featurette-heading {
-    font-size: 50px;
+  font-size: 50px;
 }
+
+
 
 .activebutton {
   z-index: 3;
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
-    cursor: default;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
   
 }
 .activebutton:hover {
-    background-color: #337ab7;
+  background-color: #337ab7;
 }
 .activebutton a{
-    color: #fff;
-    cursor: default;
-    text-decoration: none;
-    
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
+  
+}
+
+.space {
+  width:100%;
+  height:10px;
+}
+
+.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  position: absolute;
+  background: linear-gradient(#ffe7d7,#c169a2,#fff5cd,#e5af82,#faffcf,#eeffaf,#f283d1,#6dc5fb,#f6f68c,#8affa4,#d98efb,#ffd5d5);
+
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+  
 }
