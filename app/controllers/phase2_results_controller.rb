@@ -26,21 +26,10 @@ class Phase2ResultsController < ApplicationController
         c1 = counter.select {|k,v| k == p.choice_1}
         hash = c1.merge(counter.select {|k,v| k == p.choice_2})
         
-        taster_counters = {}
-        
-        (1..2).each do |i|
-          a = p.public_send("choice_" + i.to_s)
-              if taster_counters[a] == nil
-                taster_counters[a] = 0
-              end
-        end
-        
         hash1 = hash.delete_if {|k,v| v > 21}
         min = hash1.min_by{|k,v| v}
         final_selection = min.first
-        counter[final_selection] = counter[final_selection] + 1  
-        taster_counters[0][final_selection] = taster_counters[0][final_selection] + 1
-
+        counter[final_selection] = counter[final_selection] + 1
         Phase2Result.create(:name=>name, :nric=>nric, :school=>school, :class_name=>class_name, :email=>email, :phone=>phone, :final_selection=>final_selection)
       end
       

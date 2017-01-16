@@ -1,0 +1,7 @@
+{
+	apps: [{
+		name: 'sorting',
+		exec_interpreter: 'bash',
+		script: 'start.sh'
+	}]
+}
